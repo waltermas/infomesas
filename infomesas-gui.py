@@ -138,10 +138,7 @@ class InfomesasWindow(QMainWindow):
         self.pedidosTableWidget.resizeColumnsToContents()
         self.pedidosTableWidget.setColumnWidth(5, 150)
         self.pedidosTableWidget.scrollToBottom()
-        # dias, dia_semana, fecha = dias_desde_ultimo_push(".git", "origin/main")
-        dias = 3
-        fecha = 'ver'
-        dia_semana = 'ver'
+        dias, dia_semana, fecha = dias_desde_ultimo_push(".git", "origin/main")
 
         mensajeStatus = "%i registros. %i pendientes, %i en produccion, %i terminadas. Ultimo push hace %i dias (%s)" % (self.pedidosTableWidget.rowCount(), contadorPendientes, contadorEnProduccion, contadorTerminadas, dias, dia_semana)
         self.statusbar.showMessage(mensajeStatus)

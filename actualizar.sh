@@ -12,10 +12,10 @@ python3 m_generar_notas_jinja.py
 cd ../web
 python3 generar_ofertas.py
 
-# git status
-# git add -A
-# git status
-# message=`date`
-# git commit -m "$message"
-# git push
+git status
+git add -A
+git status
+message=`date`
+git commit -m "$message"
+git push
 read -n1 -s -r -p $'Press any key to continue...\n' key
