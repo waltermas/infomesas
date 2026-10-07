@@ -1,0 +1,6 @@
+pip install jinja2 pyqt6
+
+server: carpeta infomesas-server
+npm install
+node index.js (?)
+

@@ -1,0 +1,16 @@
+{% extends "base_web.html" %}
+{% block content %}
+<h1 class="display-6 text-center">Ofertas</h1>
+
+{% for oferta in ofertas %}
+<div class="row p-2 text-center">
+	  <a target="_blank" href="/fotos/ofertas/{{oferta}}">
+		  <img src="/fotos/ofertas/{{oferta}}" alt="/fotos/ofertas/{{oferta}}">
+    </a>
+	<p> {{oferta}} </p>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+<p>consulte al whatsapp 3416627943</p>

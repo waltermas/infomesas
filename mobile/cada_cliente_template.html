@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<p class="btn btn-lg text-center mx-4 my-3" style="background-color:aquamarine;">{{cliente}}</p>
+<!-- <p class="btn btn-lg text-center mx-4 my-3" style="background-color:{{colorCliente}};">{{cliente}}</p> -->
+{% for pedido in pedidos %}
+
+<div class="col-md-3 mx-3 my-3">
+{% if pedido[8] == 'en produccion' %}
+  <div class="card text-white" style="background-color:brown;">
+{% elif pedido[8] == 'presupuesto' %}
+  <div class="card text-white" style="background-color:blue;">
+{% elif pedido[8] == 'pendiente' %}
+  <div class="card bg-success text-white">
+{% elif pedido[8] == 'terminada' %}
+  <div class="card bg-warning text-white">
+{% else %}
+  <div class="card bg-secondary text-white">
+{% endif %}
+
+    <div class="card-body">
+      <h4 class="card-title text-center">{{pedido[0]}}</h4>
+      <p class="card-text">{{ pedido[1] }} {{ pedido[2] }}</p>
+      <p class="card-text">{{ pedido[4] }} - {{ pedido[5] }} * {{ pedido[6] }}</p>
+      <p class="card-text">{{ pedido[3] }}</p>
+      <p class="card-text">{{ pedido[8] }}</p>
+{% if pedido[8] == 'entregada' %}
+<p class="card-text">{{ pedido[9] }} {{ pedido[10] }}</p>
+{% endif %} 
+      <h3 class="card-text"><span class="badge bg-dark">{{ pedido[7] }}</span></h3>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock %}

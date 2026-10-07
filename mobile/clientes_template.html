@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="display-6 text-center">Clientes</h1>
+
+{% for cliente in clientes %}
+  <p class="text-center">  <a href="{{cliente[1]}}" class="btn" style="background-color:aquamarine;">{{cliente[0]}}</a></p>
+{% endfor %}
+
+{% endblock %}

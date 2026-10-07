@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1173</width>
+    <height>799</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Infomesas</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="iconosResource.qrc">
+    <normaloff>:/icons/infomesasicon.png</normaloff>:/icons/infomesasicon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <item row="2" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="1">
+       <widget class="QPushButton" name="chequesPushButton">
+        <property name="text">
+         <string>Cheques</string>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/cheque.png</normaloff>:/icons/cheque.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="clientesPushButton">
+        <property name="text">
+         <string>Clientes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="notasPushButton">
+        <property name="text">
+         <string>Notas</string>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/note.png</normaloff>:/icons/note.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="productosSeguidosPushButton">
+        <property name="text">
+         <string>Productos seguidos</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="3">
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>desde:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDateEdit" name="desdeDateEdit">
+        <property name="displayFormat">
+         <string>MM/yy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+        <property name="date">
+         <date>
+          <year>2020</year>
+          <month>1</month>
+          <day>1</day>
+         </date>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>hasta:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDateEdit" name="hastaDateEdit">
+        <property name="displayFormat">
+         <string>MM/yy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>cliente</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="clienteComboBox">
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="3">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="nuevoPushButton">
+        <property name="text">
+         <string>Nuevo pedido</string>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushPushButton">
+        <property name="text">
+         <string>Push</string>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/github.png</normaloff>:/icons/github.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="salirPushButton">
+        <property name="text">
+         <string>Salir</string>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="pendientesCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>pendientes</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="soloPendientesPushButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/chain.png</normaloff>:/icons/chain.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="enproduccionCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>en produccion</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="soloEnProduccionPushButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/chain.png</normaloff>:/icons/chain.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="terminadasCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>terminadas</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="soloTerminadasPushButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/chain.png</normaloff>:/icons/chain.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="entregadasCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>entregadas</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="soloEntregadasPushButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/chain.png</normaloff>:/icons/chain.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="anuladasCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>anuladas</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="soloAnuladasPushButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="iconosResource.qrc">
+          <normaloff>:/icons/chain.png</normaloff>:/icons/chain.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0" colspan="4">
+     <widget class="QTableWidget" name="pedidosTableWidget">
+      <property name="editTriggers">
+       <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1173</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuUtilidades">
+    <property name="title">
+     <string>Utilidades</string>
+    </property>
+    <addaction name="actionDuplicarPedido"/>
+    <addaction name="actionAbrirDB"/>
+    <addaction name="actionAdministrarModelos"/>
+    <addaction name="actionAdministrarClientes"/>
+    <addaction name="actionAdministrarProveedores"/>
+    <addaction name="actionAdministrarLugaresEntrega"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuUtilidades"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionImprimirPendientes">
+   <property name="text">
+    <string>Imprimir pendientes</string>
+   </property>
+  </action>
+  <action name="actionPedidosPorMes">
+   <property name="text">
+    <string>Pedidos por mes</string>
+   </property>
+  </action>
+  <action name="actionImprimirVistaActual">
+   <property name="text">
+    <string>Imprimir vista actual</string>
+   </property>
+  </action>
+  <action name="actionDuplicarPedido">
+   <property name="text">
+    <string>Duplicar pedido</string>
+   </property>
+  </action>
+  <action name="actionListaPrecios">
+   <property name="text">
+    <string>Lista de precios</string>
+   </property>
+  </action>
+  <action name="actionAumentar">
+   <property name="text">
+    <string>Aumentar</string>
+   </property>
+  </action>
+  <action name="actionListaHtml">
+   <property name="text">
+    <string>Lista html</string>
+   </property>
+  </action>
+  <action name="actionAbrirDB">
+   <property name="text">
+    <string>Abrir base de datos</string>
+   </property>
+  </action>
+  <action name="actionPresupuestosHtml">
+   <property name="text">
+    <string>Presupuestos html</string>
+   </property>
+  </action>
+  <action name="actionInformeCostos">
+   <property name="text">
+    <string>Informe costos</string>
+   </property>
+  </action>
+  <action name="actionAdministrarModelos">
+   <property name="text">
+    <string>Administrar modelos</string>
+   </property>
+  </action>
+  <action name="actionAdministrarClientes">
+   <property name="text">
+    <string>Administar clientes</string>
+   </property>
+  </action>
+  <action name="actionAdministrarProveedores">
+   <property name="text">
+    <string>Administrar proveedores</string>
+   </property>
+  </action>
+  <action name="actionAdministrarLugaresEntrega">
+   <property name="text">
+    <string>Administrar lugares de entrega</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="iconosResource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

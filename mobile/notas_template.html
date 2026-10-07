@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="display-6 text-center">Notas</h1>
+
+{% for titulo in titulos %}
+  <p class="text-center">  <a href="/mobile/notas/{{titulo[0]}}" class="btn" style="background-color:aquamarine;">{{titulo[1]}}</a></p>
+{% endfor %}
+
+{% endblock %}

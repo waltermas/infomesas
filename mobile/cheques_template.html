@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-md">
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-success">
+      <tr>
+	<th class="table-dark">F.recibido</th>
+	<th>Cliente</th>
+	<th>F.cheque</th>
+	<th>Demora</th>
+	<th>Banco</th>
+	<th>Numero</th>
+	<th>Importe</th>
+	<th>F.entregado</th>
+	<th>Entregado a</th>
+	</tr>
+    </thead>
+      <tbody>
+
+	{% for cheque in cheques %}
+	<tr>
+	  {% for item in cheque %}
+	    {% if item == 'disponible' %}
+	      <td class="bg-success text-white">{{ item }}</td>
+	    {% else %}
+	    <td>{{ item }}</td>
+	    {% endif %}	
+	  {% endfor %}
+    	</tr>
+	{% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+

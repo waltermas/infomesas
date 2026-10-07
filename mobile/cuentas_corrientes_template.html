@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="display-6 text-center">Deudores</h1>
+{% for deudor in deudores %}
+  <p class="text-center">  <a href="{{deudor[2]}}" class="btn" style="background-color:aquamarine;">{{deudor[0]}}</a>  {{deudor[1]}}</p>
+
+  <!-- <p class="text-center">  {{deudor[0]}} - {{deudor[1]}}</p> -->
+{% endfor %}
+
+<h1 class="display-6 text-center">Cuentas corrientes</h1>
+{% for cliente in clientes %}
+  <p class="text-center">  <a href="{{cliente[2]}}" class="btn" style="background-color:aquamarine;">{{cliente[0]}}</a></p>
+{% endfor %}
+
+{% endblock %}

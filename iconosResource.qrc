@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+  <file>icons/infomesasicon.png</file>
+  <file>icons/github.png</file>
+  <file>icons/exit.png</file>
+  <file>icons/chain.png</file>
+  <file>icons/plus.png</file>
+  <file>icons/note.png</file>
+  <file>icons/cheque.png</file>
+</qresource>
+</RCC>

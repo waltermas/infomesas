@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container-md">
+<h1 class="display-6 text-center">{{ cliente }}</h1>
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-success">
+    <tr>
+      <th class="table-dark">Fecha</th>
+      <th>Descripcion</th>
+      <th>Debe</th>
+      <th>Haber</th>
+      <th>Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for item in data %}
+  <tr>
+    <td>{{ item[0] }}</td>
+    <td>{{ item[1] }}</td>
+    <td><div style="text-align:right;">{{ item[2] }}</div></td>
+    <td><div style="text-align:right;">{{ item[3] }}</div></td>
+    <td><div style="text-align:right;">{{ item[4] }}</div></td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+</div> 
+
+{% endblock %}

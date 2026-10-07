@@ -1,0 +1,3 @@
+-d:env
+-d:__pycache__
+-d:node_modules

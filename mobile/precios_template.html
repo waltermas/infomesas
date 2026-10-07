@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--tabla -->
+<div class="container-md">
+  <div class="row">
+    <div class="col-md-6">
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-success">
+	<tr>
+	  <th class="table-dark">Producto</th>
+	  <th>Precio</th>
+	  <th>Actualizacion</th>
+	</tr>
+      </thead>
+      <tbody>
+
+      {% for item in precios %}
+      <tr>
+	      <td>
+	      {{ item[0] }}
+	      </td>
+	      <td>
+		<div style="text-align:right;">{{ item[1] }}</div>
+	      </td>
+	      <td>
+		<div style="text-align:right;">{{ item[2] }}</div>
+	      </td>
+      </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+    </div>
+
+  <div class="col-md-6">
+	<!--conversor-->
+	<div class="container p-5 my-5 border">
+	<form>
+	  <h2>Calculo de pies</h2>
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="espesor" class="col-form-label">Espesor</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="espesor"></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="ancho" class="form-label">Ancho</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="ancho"></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	    <label for="largo" class="form-label">Largo (cm)</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="largo">
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="cantidad" class="form-label">Cantidad</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="cantidad" value=1></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="precio" class="form-label">Precio</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="precio" value=1></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	      <div style="text-align:right;"><button type="submit" class="btn btn-primary" id="btnCalcular" onclick="clickBtnCalcular(); return false;">Calcular</button></div>
+	      </div>
+	    </div>
+
+	  <div class="row py-1">
+	    <div class="col-10 offset-2 alert alert-success" id="divResultado"></div>
+	  </div> 
+	</form>
+	</div>
+
+
+	<!--hoja-->
+
+	<div class="container p-5 my-5 border">
+	<form>
+	  <h2>Calculo de cortes</h2>
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="largo hoja" class="col-form-label">Largo hoja</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="largo hoja" value=260></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="ancho hoja" class="form-label">Ancho hoja</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="ancho hoja" value=183></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	    <label for="largo corte" class="form-label">Largo (cm)</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="largo corte">
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="ancho corte" class="form-label">Ancho (cm)</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="ancho corte"</input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="cantidad" class="form-label">Cantidad</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="cantidad corte" value=1></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6">
+	  <label for="precio" class="form-label">Precio</label>
+	    </div>
+	    <div class="col-6">
+	  <input type="text" class="form-control text-end" id="precio hoja" value=1></input>
+	    </div>
+	  </div>
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	      <div style="text-align:right;"><button type="submit" class="btn btn-primary" id="btnCalcularCorte" onclick="clickBtnCalcularCorte(); return false;">Calcular</button></div>
+	      </div>
+	    </div>
+
+	  <div class="row py-1">
+	    <div class="col-10 offset-2 alert alert-success" id="divResultadoCorte"></div>
+	  </div> 
+	</form>
+	</div>
+
+
+
+	<!--sumatoria-->
+	<div class="container p-5 my-5 border">
+	<form>
+	  <h2>Sumatoria</h2>
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	    <input type="text" class="form-control text-end" id="s1"</input>
+	    </div>
+	  </div> 
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	    <input type="text" class="form-control text-end" id="s2"</input>
+	    </div>
+	  </div> 
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	    <input type="text" class="form-control text-end" id="s3"</input>
+	    </div>
+	  </div> 
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	    <input type="text" class="form-control text-end" id="s4"</input>
+	    </div>
+	  </div> 
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	    <input type="text" class="form-control text-end" id="s5"</input>
+	    </div>
+	  </div> 
+
+	  <div class="row py-1">
+	    <div class="col-6 offset-6">
+	      <div style="text-align:right;"><button type="submit" class="btn btn-primary" id="btnCalcularSuma" onclick="clickBtnCalcularSuma(); return false;">Calcular</button></div>
+	      </div>
+	    </div>
+
+	  <div class="row py-1">
+	    <div class="col-10 offset-2 alert alert-success" id="divResultadoSuma"></div>
+	  </div> 
+	</form>
+	</div> 
+
+		<!-- <p><iframe width="219" height="302" src="http://calculator-1.com/outdoor/?f=0666666&r=666666" scrolling="no" frameborder="0"></iframe><br /><a href="https://calculator-1.com/">Calculator</a></p> -->
+      
+  </div>
+  </div>
+</div>
+
+
+
+<script>
+
+function clickBtnCalcular(){
+	var espesor = document.getElementById("espesor").value;
+	var ancho = document.getElementById("ancho").value;
+	var largo = document.getElementById("largo").value;
+	var cantidad = document.getElementById("cantidad").value;
+	var precio = document.getElementById("precio").value;
+	var pies = Math.round((espesor * ancho * largo * cantidad * 0.002734 + Number.EPSILON) * 100) / 100;
+
+	<!--var precioTotal = pies * precio;-->
+	var precioTotal = Math.round(((pies * precio) + Number.EPSILON) * 100) / 100;
+
+
+	var divResultado = document.getElementById("divResultado");
+	divResultado.innerHTML = `${pies} pies, ${precioTotal} pesos`;
+
+}
+
+function clickBtnCalcularCorte(){
+	var largoHoja = document.getElementById("largo hoja").value;
+	var anchoHoja = document.getElementById("ancho hoja").value;
+	var anchoCorte = document.getElementById("ancho corte").value;
+	var largoCorte = document.getElementById("largo corte").value;
+	var cantidadCorte = document.getElementById("cantidad corte").value;
+	var precioHoja = document.getElementById("precio hoja").value;
+	<!-- var m2 = largoHoja * anchoHoja / 10000 * cantidadCorte -->
+	var m2 = largoCorte * anchoCorte / 10000 * cantidadCorte
+	var precioTotalCorte = precioHoja / (largoHoja * anchoHoja / 10000) * m2
+
+
+	var divResultadoCorte = document.getElementById("divResultadoCorte");
+	divResultadoCorte.innerHTML = `${m2} m2, ${precioTotalCorte} pesos`;
+
+}
+
+function clickBtnCalcularSuma(){
+	var s1 = document.getElementById("s1").value;
+	var s2 = document.getElementById("s2").value;
+	var s3 = document.getElementById("s3").value;
+	var s4 = document.getElementById("s4").value;
+	var s5 = document.getElementById("s5").value;
+//	var totalSuma = parseInt(s1) + parseInt(s2) + parseInt(s3) + parseInt(s4) + parseInt(s5);
+	var totalSuma = Number(s1) + Number(s2) + Number(s3) + Number(s4) + Number(s5);
+	
+	var divResultadoSuma = document.getElementById("divResultadoSuma");
+	divResultadoSuma.innerHTML = `Total: ${totalSuma}`;
+
+
+}
+
+
+</script>
+
+{% endblock %}
