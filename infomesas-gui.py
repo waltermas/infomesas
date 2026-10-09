@@ -77,7 +77,8 @@ class InfomesasWindow(QMainWindow):
         self.soloEntregadasPushButton.clicked.connect(partial(self.solo, self.entregadasCheckBox))
         self.soloAnuladasPushButton.clicked.connect(partial(self.solo, self.anuladasCheckBox))
         self.pedidosTableWidget.horizontalHeader().sectionClicked.connect(self.onHeaderClicked)
-
+        self.actionDuplicarPedido.triggered.connect(self.duplicarPedido)
+        
         self.vistaChanged()
 
     def visualizarQuery(self, queryString):
@@ -355,7 +356,7 @@ class PedidoDialog(QDialog):
         self.filterListaLineEdit.textChanged.connect(self.mostrarLista)
         self.calcularPushButton.setShortcut("Ctrl+Return")
         self.calcularPushButton.clicked.connect(self.calcular)
-        self.ultimaLista=open('ultimalista.txt').readlines()
+        self.ultimaLista=open('lista/ultimalista.txt').readlines()
         self.pasarAccPushButton.clicked.connect(self.pasarAcc)
         self.medidaCerradaSpinBox.valueChanged.connect(self.autoFilterUltimaLista)
 
